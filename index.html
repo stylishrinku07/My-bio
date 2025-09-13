@@ -210,7 +210,7 @@
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            background: #734f96 url('https://placehold.co/110x110/734f96/FFFFFF?text=SK') no-repeat center / cover;
+            background: url('1.jpg') no-repeat center / cover;
             margin-bottom: 2px;
             overflow: hidden;
             cursor: pointer;
@@ -894,7 +894,7 @@
     </style>
 </head>
 
-<body id="body" class="dark">
+<body id="body" class="dark" oncontextmenu="return false">
     <div id="particles-js"></div>
     
     <div class="wrapper">
@@ -909,7 +909,7 @@
     </div>
 
     <div class="modal">
-        <img src="https://placehold.co/400x400/734f96/FFFFFF?text=SK" alt="Profile">
+        <img src="1.jpg" alt="Profile">
         <div class="close"></div>
     </div>
 
@@ -946,7 +946,7 @@
                 <div class="left">
                     <div class="about-container">
                         <h3 class="title">About</h3>
-                        <p class="text">✦ 1st year Of Bsc In Data Science And Ai | Sᴄʜᴏᴏʟ: IIT Guwahati✦</p>
+                        <p class="text">✦ Cʟᴧss: XIII | Sᴄʜᴏᴏʟ: IIT Guwahati✦</p>
                         <p class="text">~ Dᴇᴠ ~</p>
                         <p class="text">• Pʏᴛʜᴏɴ | JᴧᴠᴧSᴄʀɪᴘᴛ | Hᴛᴍʟ | Css •</p>
                     </div>
@@ -1114,6 +1114,30 @@
             
             // Initialize with dark theme particles
             initParticlesDark();
+            
+            // Right-click context menu disable
+            document.oncontextmenu = function(e) {
+                return false;
+            };
+            
+            // Dev tools disable
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+            };
         });
     </script>
 </body>
